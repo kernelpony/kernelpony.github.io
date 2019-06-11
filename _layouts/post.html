@@ -1,9 +1,18 @@
 ---
 layout: default
 ---
+{%- include header.html -%}
 
-<article>
-  <h2>{{ page.title }}</h2>
-  <time datetime="{{ page.date | date_to_xmlschema }}" class="by-line">{{ page.date | date_to_string }}</time>
-  {{ content }}
-</article>
+<!-- Main -->
+<div id="main">
+	<!-- Post -->
+	<article class="shade-two">
+	  <div class="container">
+			<header>
+				<h2>{{- page.title -}}</h2>
+				<p>{% if page.author %}{{ page.author }}, {% endif %}{{- page.date | date_to_long_string -}}</p>
+			</header>
+	    {{- content -}}
+	  </div>
+	</article>
+</div>
