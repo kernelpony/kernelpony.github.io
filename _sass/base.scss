@@ -1,3 +1,7 @@
+/*
+   original: https://github.com/pages-themes/hacker 
+*/
+
 @import "rouge-base16-dark";
 @import "default_colors";
 
@@ -10,7 +14,7 @@ $blockquote-border: $dove-grey !default;
 body {
   margin: 0;
   padding: 0;
-  background: $body-background url("../images/bkg.png") 0 0;
+  background: $body-background url("../assets/bkg.png") 0 0;
   color: $body-foreground;
   font-size: 16px;
   line-height: 1.5;
@@ -24,6 +28,7 @@ body {
   max-width: 1000px;
   margin: 0 auto;
 }
+
 
 section {
   display: block;
@@ -46,16 +51,24 @@ li {
 
 header {
   background: rgba(0, 0, 0, 0.1);
-  width: 100%;
   border-bottom: 1px dashed $conifer; //header;
-  padding: 20px 0;
+  padding: 20px;
   margin: 0 0 40px 0;
 }
 
+.header-links {
+  text-align: center;
+}
+
+.header-link {
+  display: inline;
+}
+
 header h1 {
-  font-size: 30px;
+  font-size: 24px;
   line-height: 1.5;
-  margin: 0 0 0 -40px;
+  margin: 0;
+  text-align: center;
   font-weight: bold;
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   color: $conifer;//$header;
@@ -66,21 +79,10 @@ header h1 {
   -webkit-font-smoothing: antialiased;
 }
 
-header h1:before {
-  content: "./ ";
-  font-size: 24px;
-}
-
 header h2 {
   font-size: 18px;
   font-weight: 300;
   color: #666;
-}
-
-#downloads .btn {
-  display: inline-block;
-  text-align: center;
-  margin: 0;
 }
 
 /* Main Content
@@ -139,7 +141,7 @@ dt {
 }
 
 ul li {
-  list-style-image:url('../images/bullet.png');
+  list-style-image:url('../assets/bullet.png');
 }
 
 blockquote {
@@ -155,7 +157,7 @@ pre {
   font-size: 16px;
   color: #b5e853;
   border-radius: 2px;
-  word-wrap: normal;
+  text-wrap: normal;
   overflow: auto;
   overflow-y: hidden;
 }
@@ -237,6 +239,12 @@ a {
   text-shadow: 0 0 5px rgba(104, 182, 255, 0.5);
 }
 
+a:active, a:focus {
+  outline: 0;
+  border: none;
+  -moz-outline-style: none
+}
+
 /* Clearfix */
 
 .cf:before, .cf:after {
@@ -250,4 +258,16 @@ a {
 
 .cf {
   zoom:1;
+}
+
+/* Make footer stick to bottom */
+
+.pagination, footer {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+#wrapper {
+  min-height: calc(100vh - 100px);
 }
